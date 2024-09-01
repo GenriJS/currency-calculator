@@ -19,13 +19,14 @@
 <script>
 import { ref, computed, watch, onMounted } from 'vue';
 import { fetchRates } from '../services/currencyService.js';
+import { getLocaleAndCurrency } from '../services/LocaleCurrency.js';
 
 export default {
   setup() {
     const amount = ref(1);
-    const baseCurrency = ref('USD');
+    const baseCurrency = ref(getLocaleAndCurrency());
     const targetCurrency = ref('EUR');
-    const currencies = ref(['USD', 'EUR', 'GBP', 'JPY', 'RUB']); // список валют
+    const currencies = ref(['USD', 'EUR', 'GBP', 'JPY', 'RUB']);
     const rates = ref({});
 
     const convertedAmount = computed(() => {
