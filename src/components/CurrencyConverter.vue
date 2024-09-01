@@ -12,7 +12,7 @@
         {{ currency }}
       </option>
     </select>
-    <p>Converted Amount: {{ convertedAmount }}</p>
+    <p>Converted Amount: {{ convertedAmount.toFixed(3) }}</p>
   </div>
 </template>
 
